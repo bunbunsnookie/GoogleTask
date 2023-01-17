@@ -1,4 +1,4 @@
-package com.example.googletask
+package com.example.googletask.Models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

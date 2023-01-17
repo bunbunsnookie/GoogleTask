@@ -1,7 +1,8 @@
-package com.example.googletask
+package com.example.googletask.Models
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import com.example.googletask.Models.Task
 import kotlinx.coroutines.flow.Flow
 
 @Dao
