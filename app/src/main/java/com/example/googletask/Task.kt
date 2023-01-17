@@ -18,6 +18,8 @@ data class Task (
         var chosen: Boolean,
         @ColumnInfo(name = "completed")
         var complited: Boolean,
+        @ColumnInfo(name = "fromTask")
+        var fromTask: Int? = null,
         )
 
 
