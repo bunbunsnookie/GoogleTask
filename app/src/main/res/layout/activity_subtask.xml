@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Views.TaskActivity">
+    tools:context=".Views.SubtaskActivity">
 
     <ImageButton
-        android:id="@+id/edBack1"
+        android:id="@+id/edBack2"
         android:layout_width="27dp"
         android:layout_height="29dp"
         android:layout_marginStart="5dp"
@@ -20,7 +20,7 @@
         app:tint="#2469DF" />
 
     <ImageButton
-        android:id="@+id/edDelete1"
+        android:id="@+id/edDelete2"
         android:layout_width="27dp"
         android:layout_height="29dp"
         android:layout_marginTop="5dp"
@@ -33,7 +33,7 @@
         app:tint="#A9D6D6" />
 
     <ImageButton
-        android:id="@+id/edStar1"
+        android:id="@+id/edStar2"
         android:layout_width="27dp"
         android:layout_height="29dp"
         android:layout_marginTop="5dp"
@@ -41,29 +41,8 @@
         android:backgroundTint="#FFFFFF"
         android:minHeight="48dp"
         android:src="@drawable/ic_star"
-        app:layout_constraintEnd_toStartOf="@+id/edDelete1"
+        app:layout_constraintEnd_toStartOf="@+id/edDelete2"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="#A9D6D6" />
 
-    <TextView
-        android:id="@+id/edAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="Добавить подзадачу"
-        android:textSize="20dp"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <View
-        android:id="@+id/view3"
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginBottom="20dp"
-        android:background="#DEE9FB"
-        app:layout_constraintBottom_toTopOf="@+id/edAdd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
