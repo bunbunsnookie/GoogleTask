@@ -22,11 +22,24 @@ abstract class MainDb : RoomDatabase() {
     abstract fun getDao(): Dao
 
     companion object{
-        fun getDb(context: Context): MainDb {
+
+        @Volatile
+        private lateinit var instance: MainDb
+
+        fun getInstance(context: Context): MainDb{
+            synchronized(this){
+                if (!::instance.isInitialized){
+                    instance = createDatabase(context)
+                }
+                return instance
+            }
+        }
+
+        private fun createDatabase(context: Context): MainDb {
             return Room.databaseBuilder(
-                context.applicationContext,
+                context,
                 MainDb::class.java,
-                "database1.db"
+                "TasksDatabase"
             ).build()
         }
     }
