@@ -25,7 +25,7 @@ class AddTaskDialog : AppCompatDialogFragment() {
             val builder = AlertDialog.Builder(requireActivity())
 
             builder.setView(root)
-                .setTitle(textView2.text)
+                .setTitle(R.string.new_task)
                 .setNegativeButton(R.string.cancel) { dialog, _ ->
                     dialog.dismiss()
                 }
@@ -100,7 +100,7 @@ class AddTaskDialog : AppCompatDialogFragment() {
     }
 
     interface CreateTaskDialogInterface {
-        fun addTask(title: String, task: String, date: String)
+        fun addTask(title: String, desc: String, date: String)
     }
 
 }
