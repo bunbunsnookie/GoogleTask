@@ -8,14 +8,14 @@ import androidx.room.RoomDatabase
 
 @Database (
     entities = [Task::class],
-    version = 1,
+    version = 2,
     exportSchema = true,
-    //autoMigrations = [
-      // AutoMigration(
-        //   from = 1,
-          //  to = 2,
-        //)
-    //]
+    autoMigrations = [
+       AutoMigration(
+           from = 1,
+           to = 2,
+        )
+    ]
 )
 abstract class MainDb : RoomDatabase() {
 

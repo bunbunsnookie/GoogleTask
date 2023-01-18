@@ -100,7 +100,7 @@ class AddTaskDialog : AppCompatDialogFragment() {
     }
 
     interface CreateTaskDialogInterface {
-        fun addTask(title: String, desc: String, date: String)
+        fun addTask(title: String, desc: String, date: String, chosen: Boolean = false, completed: Boolean = false, fromTask : Int? = null)
     }
 
 }

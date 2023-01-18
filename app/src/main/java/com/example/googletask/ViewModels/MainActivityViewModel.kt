@@ -6,19 +6,27 @@ import com.example.googletask.Models.TasksRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import androidx.lifecycle.viewModelScope
 
 class MainActivityViewModel(private val repository: TasksRepository): ViewModel() {
 
-    fun update(task: Task) = CoroutineScope(Dispatchers.Main).launch {
-        repository.update(task)
+    fun update(task: Task){
+        viewModelScope.launch {
+            repository.update(task)
+        }
+
     }
 
-    fun delete(task: Task) = CoroutineScope(Dispatchers.Main).launch {
-        repository.delete(task)
+    fun delete(task: Task){
+        viewModelScope.launch {
+            repository.delete(task)
+        }
     }
 
-    fun insert(task: Task) = CoroutineScope(Dispatchers.Main).launch {
-        repository.insert(task)
+    fun insert(task: Task){
+        viewModelScope.launch {
+            repository.insert(task)
+        }
     }
 
     fun getAllTask() = repository.getAllTasks()
