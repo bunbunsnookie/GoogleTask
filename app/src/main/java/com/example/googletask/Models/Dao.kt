@@ -1,4 +1,5 @@
 package com.example.googletask.Models
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import androidx.room.Dao
 import com.example.googletask.Models.Task
@@ -8,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 interface Dao {
 
     @Query("SELECT * FROM tasks")
-    fun getAllTasks(): List<Task>
+    fun getAllTasks(): LiveData<List<Task>>
 
     @Insert
     suspend fun insertTask(task: Task)
@@ -20,6 +21,6 @@ interface Dao {
     suspend fun updateTask(task: Task)
 
     @Query("SELECT * FROM tasks WHERE fromTask = :taskId")
-    fun getAllSubtasks(taskId: Int): List<Task>
+    fun getAllSubtasks(taskId: Int): LiveData<List<Task>>
 
 }
