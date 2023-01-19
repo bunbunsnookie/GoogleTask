@@ -66,7 +66,7 @@ class TasksAdapter(
                     task.title,
                     task.description,
                     task.data,
-                    task.chosen,
+                    !task.chosen,
                     task.completed,
                     task.fromTask,
                     task.id
