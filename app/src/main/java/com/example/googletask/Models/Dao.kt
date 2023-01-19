@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface Dao {
 
-    @Query("SELECT * FROM tasks")
+    @Query("SELECT * FROM tasks WHERE fromTask is null")
     fun getAllTasks(): LiveData<List<Task>>
 
     @Insert
