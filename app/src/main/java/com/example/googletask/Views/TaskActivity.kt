@@ -1,12 +1,12 @@
-package com.example.googletask.Models
+package com.example.googletask.Views
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,7 +21,6 @@ import com.example.googletask.Models.Const
 import com.example.googletask.Models.SubtasksAdapter
 import com.example.googletask.ViewModels.MainActivityViewModel
 import com.example.googletask.ViewModels.MainActivityViewModelFactory
-import com.example.googletask.databinding.TaskBinding
 import java.text.DateFormat
 import java.util.*
 
@@ -34,6 +33,7 @@ class TaskActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTaskBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val database = MainDb.getInstance(this)
         val repository = TasksRepository(database)
@@ -60,8 +60,9 @@ class TaskActivity : AppCompatActivity() {
             etDescriptionEdit.setText(taskSerializable.desc)
             tvDate.text = taskSerializable.date
 
-            val color = getCompletedButtonColor(taskSerializable.completed)
-            val text = getCompletedButtonText(taskSerializable.completed)
+            val color = getCompletedColor(taskSerializable.completed)
+            val text = getCompletedText(taskSerializable.completed)
+            edComp.setTextColor(color)
             edComp.text = text
 
             edStar1.setImageResource(
@@ -72,11 +73,11 @@ class TaskActivity : AppCompatActivity() {
 
             edComp.setOnClickListener {
                 taskSerializable.completed = !taskSerializable.completed
-                val btnColor = getCompletedButtonColor(taskSerializable.completed)
-                val btnText = getCompletedButtonText(taskSerializable.completed)
-                val btnCompleted = it as Button
+                val btnColor = getCompletedColor(taskSerializable.completed)
+                val btnText = getCompletedText(taskSerializable.completed)
+                val btnCompleted = it as TextView
                 btnCompleted.text = btnText
-                btnCompleted.setBackgroundColor(btnColor)
+                btnCompleted.setTextColor(btnColor)
                 val task = TaskSerializer.toTask(taskSerializable)
                 viewModel.update(task)
             }
@@ -137,14 +138,14 @@ class TaskActivity : AppCompatActivity() {
         super.onBackPressed()
     }
 
-    private fun getCompletedButtonText(isCompleted: Boolean): String {
+    private fun getCompletedText(isCompleted: Boolean): String {
         return if (isCompleted) resources.getString(R.string.task_is_completed)
         else resources.getString(R.string.task_is_not_completed)
     }
 
-    private fun getCompletedButtonColor(isCompleted: Boolean): Int {
-        return if (isCompleted) ContextCompat.getColor(applicationContext, R.color.purple_200)
-        else ContextCompat.getColor(applicationContext, R.color.teal_200)
+    private fun getCompletedColor(isCompleted: Boolean): Int {
+        return if (isCompleted) ContextCompat.getColor(applicationContext, R.color.mint)
+        else ContextCompat.getColor(applicationContext, R.color.black)
     }
 
     fun getStarDrawable(isImportant: Boolean): Int {
