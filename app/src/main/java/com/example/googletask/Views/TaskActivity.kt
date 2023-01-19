@@ -5,7 +5,6 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
@@ -90,7 +89,7 @@ class TaskActivity : AppCompatActivity() {
             }
 
             edAdd.setOnClickListener {
-                viewModel.insert(Task(taskSerializable.title,"", taskSerializable.date, taskSerializable.chosen, taskSerializable.completed, taskSerializable.id))
+                viewModel.insert(Task("","", taskSerializable.date, taskSerializable.chosen, taskSerializable.completed, taskSerializable.id))
             }
 
             tvDate.setOnClickListener {

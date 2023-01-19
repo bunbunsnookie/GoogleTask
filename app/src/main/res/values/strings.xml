@@ -7,15 +7,14 @@
     <string name="task_deleted">Задача удалена</string>
     <string name="go_back">Назад</string>
     <string name="delete">Удалить</string>
-    <string name="chosen">Переместить в важные</string>
     <string name="title">Заголовок</string>
     <string name="desc">Описание</string>
-    <string name="add_subtask">Добавить подзадачу</string>
-    <string name="task_is_completed">Задача выполнена</string>
+    <string name="add_subtask">Подзадача</string>
+    <string name="task_is_completed">Выполнена</string>
     <string name="save">Сохранить</string>
     <string name="new_subtask">Новая подзадача</string>
     <string name="task_is_not_completed">Не выполнена</string>
     <string name="sort_by_name">Сортировать по Имени</string>
     <string name="sort_by_date">Сортировать по Дате</string>
-    <string name="sort_by_chosen">Сортировать по избранным</string>
+    <string name="sort_by_chosen">Сортировать по Избранным</string>
 </resources>

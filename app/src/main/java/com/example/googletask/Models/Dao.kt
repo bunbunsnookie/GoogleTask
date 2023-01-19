@@ -2,9 +2,6 @@ package com.example.googletask.Models
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import androidx.room.Dao
-import com.example.googletask.Models.Task
-import kotlinx.coroutines.flow.Flow
-
 @Dao
 interface Dao {
 

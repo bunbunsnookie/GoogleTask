@@ -1,20 +1,9 @@
 package com.example.googletask.Models
 
-import android.content.Context
-import android.os.CountDownTimer
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
-import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.RecyclerView
 import com.example.googletask.databinding.SubtaskBinding
-import com.example.googletask.Models.Task
 import com.example.googletask.ViewModels.MainActivityViewModel
 
 class SubtasksAdapter(
